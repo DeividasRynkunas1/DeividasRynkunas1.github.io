@@ -1,0 +1,445 @@
+/* === Custom styles for LD9 – Deividas Rynkūnas CV === */
+
+/* 2a. Global font family change */
+:root {
+  --custom-font-main: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --custom-font-heading: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--custom-font-main);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+/* 2b. Headings – different sizes, colors, spacing */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--custom-font-heading);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  text-transform: none;
+}
+
+/* Hero name */
+.hero h2 {
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #111827;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.35rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.1rem;
+  color: #1f2933;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Paragraphs – slightly softer look than template */
+p {
+  font-size: 0.98rem;
+  color: #4b5563;
+}
+
+/* 3. Buttons and links */
+.btn,
+button,
+input[type="submit"],
+input[type="button"] {
+  border-radius: 999px;
+  border: none;
+  padding: 0.55rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #f9fafb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.32);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+  opacity: 0.96;
+}
+
+.btn:active,
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.4);
+}
+
+/* Links */
+a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  text-decoration-color: transparent;
+}
+
+a:hover,
+a:focus {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Social icons */
+.social-links a {
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.social-links a:hover {
+  background: #2563eb;
+  color: #f9fafb;
+}
+
+/* 4. Section spacing and blocks (About, Resume, Portfolio) */
+.section {
+  padding: 80px 0;
+}
+
+#about.section,
+#resume.section,
+#portfolio.section,
+#services.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Generic content block style */
+.section .container > .row > [class*="col-"],
+.section .container .content,
+.section .container .resume-item,
+.section .container .portfolio-item,
+.section .container .info-box {
+  margin-bottom: 24px;
+}
+
+/* Card-like blocks */
+.section .content,
+.section .resume-item,
+.section .portfolio-item,
+.section .info-box,
+.section .services-list .service-item {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  padding: 24px 24px;
+}
+
+/* 5. Two chosen components – navigation bar and back-to-top button */
+
+/* Navbar */
+.header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+.header .logo a {
+  font-family: var(--custom-font-heading);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.navmenu a {
+  font-weight: 500;
+  font-size: 0.86rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.navmenu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #f97316, #22c55e, #3b82f6, #a855f7);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.navmenu a:hover::after,
+.navmenu a.active::after {
+  width: 60%;
+}
+
+.navmenu a:hover {
+  color: #f9fafb;
+}
+
+/* Back-to-top button */
+.scroll-top {
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #111827;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.6);
+}
+
+.scroll-top i {
+  font-size: 20px;
+}
+
+.scroll-top:hover {
+  background: #2563eb;
+}
+
+/* 6. Color contrast – ensure good contrast for hero & sections */
+
+.hero {
+  color: #f9fafb;
+}
+
+.hero::before {
+  /* dark overlay for better text contrast */
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 64, 175, 0.9));
+}
+
+.hero .typed,
+.hero span,
+.hero p {
+  color: #e5e7eb;
+}
+
+.section.light-background {
+  background: #f3f4f6;
+}
+
+/* Ensure cards stand out on light bg */
+.section.light-background .content,
+.section.light-background .resume-item,
+.section.light-background .portfolio-item,
+.section.light-background .info-box {
+  background: #ffffff;
+}
+
+/* Resume timeline line recolor for contrast */
+.resume .resume-title {
+  color: #111827;
+}
+
+.resume .resume-item::before {
+  background: #2563eb;
+}
+
+.resume .resume-item h4 {
+  color: #111827;
+}
+
+/* Portfolio filters */
+.portfolio .portfolio-flters li {
+  border-radius: 999px;
+  padding: 6px 18px;
+  margin: 0 4px;
+  border: 1px solid rgba(15, 23, 42, 0.25);
+}
+
+.portfolio .portfolio-flters li.filter-active,
+.portfolio .portfolio-flters li:hover {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* Simple responsiveness adjustments */
+@media (max-width: 991px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .section .content,
+  .section .resume-item,
+  .section .portfolio-item,
+  .section .info-box {
+    padding: 20px;
+  }
+}
+
+
+/* === Additional task: custom list styles with counters and pseudo-elements === */
+
+.skill-steps {
+  counter-reset: skill-counter;
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0 1rem;
+}
+
+.skill-steps > li {
+  counter-increment: skill-counter;
+  position: relative;
+  padding-left: 3.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.skill-steps > li::before {
+  content: counter(skill-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #f97316, #ec4899, #6366f1);
+  color: #f9fafb;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.28);
+}
+
+.skill-steps .nested-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.35rem;
+}
+
+.skill-steps .nested-list > li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.skill-steps .nested-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.55rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+
+/* Unordered tag-style list */
+.tag-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.2rem;
+}
+
+.tag-list li {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(249, 250, 251, 0.9);
+}
+
+
+/* === Additional task: services table styling === */
+
+.services-table-wrapper {
+  overflow-x: auto;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.services-table thead th {
+  background: #111827;
+  color: #f9fafb;
+  padding: 0.85rem 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.services-table td {
+  padding: 0.8rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Zebra stripes */
+.services-table tbody tr:nth-child(odd) {
+  background: #f3f4f6;
+}
+
+.services-table tbody tr:nth-child(even) {
+  background: #e5e7eb;
+}
+
+/* Hover effect */
+.services-table tbody tr:hover {
+  background: #dbeafe;
+}
+
+/* Cell borders */
+.services-table th,
+.services-table td {
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
